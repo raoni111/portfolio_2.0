@@ -35,14 +35,15 @@ import LinkedinIcon from './icons/linkedin-icon.vue';
 
   .title {
     color: var(--font-color-green);
+    font-size: 1.8rem;
   }
-  
+
   .header-social-list {
     display: flex;
     list-style: none;
-  
+
     .social-icon {
-    
+
       a {
         cursor: pointer;
         display: flex;
@@ -53,7 +54,7 @@ import LinkedinIcon from './icons/linkedin-icon.vue';
         &:nth-child(1) {
           margin-right: 2rem;
         }
-        
+
         .social-name {
           margin-left: 1rem;
           font-size: 1.4rem;
