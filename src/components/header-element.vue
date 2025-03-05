@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import GithubIcon from './icons/github-icon.vue';
-import LinkedinIcon from './icons/linkedin-icon.vue';
-
+import GithubIcon from './icons/header/github-icon.vue'
+import LinkedinIcon from './icons/header/linkedin-icon.vue'
 </script>
 
 <template>
@@ -38,9 +37,9 @@ import LinkedinIcon from './icons/linkedin-icon.vue';
     font-size: 1.8rem;
   }
 
-  .header-social-list {
-    display: flex;
-    list-style: none;
+    .header-social-list {
+      display: flex;
+      list-style: none;
 
     .social-icon {
 
