@@ -38,9 +38,9 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
 
   .initial-page-about-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 75%;
 
     .initial-page-about {
       width: 55%;
@@ -91,7 +91,7 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
     }
 
     .initial-page-img {
-      width: 45%;
+      width: 40%;
     }
   }
 }
