@@ -7,9 +7,9 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
     <section class="initial-page-about-section">
       <div class="initial-page-about section-initial-page">
         <div class="developer-information">
-          <span>ola, meu nome e</span>
+          <span>Ola, meu nome e</span>
           <h1>Raoni Oliveira Quevedo</h1>
-          <h2>Sou Full Stack Developer</h2>
+          <h2>Full Stack Developer</h2>
           <p>
             Desenvolvedor de software desde os 16 anos, tenho 2.5 anos de experiência profissional,
             com expertise em JavaScript, TypeScript e Python. Minha trajetória na programação
@@ -41,7 +41,6 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
     justify-content: space-between;
     align-items: center;
     width: 75%;
-
     .initial-page-about {
       width: 55%;
 
