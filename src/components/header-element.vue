@@ -27,18 +27,19 @@ import LinkedinIcon from './icons/header/linkedin-icon.vue'
 
 <style lang="scss" scoped>
 .header-element {
+  position: absolute ;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   width: 100dvw;
   background-color: var(--default-background);
+  z-index: 2;
   .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 75%;
-    padding: 2rem 0rem;
+    padding: 1.5rem 0rem;
     .title {
       color: var(--font-color-green);
       font-size: 1.8rem;
