@@ -6,5 +6,15 @@
   width: 100dvw;
   height: 100dvh;
   background-color: var(--default-background);
+  
+}
 
+#app::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+#app::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--font-color-green);
 }
