@@ -48,6 +48,8 @@
       img {
         width: 70%;
         border-radius: 100%;
+        border: 5px solid var(--font-color-green);
+        box-shadow: 0px 0px 50px rgba(0, 255, 85, 0.185);
       }
     }
     .about-more-text {
