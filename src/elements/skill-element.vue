@@ -40,4 +40,27 @@
       color: var(--font-color-green);
     }
   }
+
+  @media (max-width: 1000px) {
+    .skill-element {
+      padding: 1rem 1.5rem;
+      img {
+        width: 28px;
+      }
+      h4 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skill-element {
+      img {
+        width: 25px;
+      }
+      h4 {
+        font-size: 1rem;
+      }
+    }
+  }
 </style>

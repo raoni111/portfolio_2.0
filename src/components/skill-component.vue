@@ -121,4 +121,67 @@
     }
   }
 }
+
+@media (max-width: 1450px) {
+  .skill-component {
+    .skill-content {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .skill-component {
+    .skill-content {
+      width: 95%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .skill-component {
+    .skill-content {
+      .sector-content {
+      .skill-list {
+        gap: 15px;
+      }
+    }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .skill-component {
+    .skill-content {
+      width: 80%;
+      flex-direction: column;
+      margin-top: 2rem;
+      .sector-content {
+        margin-top: 2rem;
+        .skill-list {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .skill-component {
+    h1 {
+      font-size: 2rem;
+    }
+    .skill-content {
+      width: 90%;
+      .sector-content {
+        h2 {
+          font-size: 1.8rem;
+        }
+        .skill-list {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+      }
+    }
+  }
+}
 </style>
