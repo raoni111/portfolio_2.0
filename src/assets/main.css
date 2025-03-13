@@ -1,20 +1,25 @@
 @import './base.css';
 
 #app {
-  overflow: hidden;
-  overflow-y: auto;
   width: 100dvw;
   height: 100dvh;
   background-color: var(--default-background);
   
 }
 
-#app::-webkit-scrollbar {
-  width: 10px;
-  background-color: transparent;
+html {
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: var(--default-background);
 }
 
-#app::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--default-background);
+  z-index: 999;
+}
+
+html::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: var(--font-color-green);
 }
