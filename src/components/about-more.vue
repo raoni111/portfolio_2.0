@@ -1,8 +1,13 @@
+<script lang="ts" setup>
+  import photo from "@/assets/img/photo.jpg";
+
+</script>
+
 <template>
   <section class="about-more-component">
     <div class="about-more-content">
       <div class="about-more-photo-content">
-        <img src="./img/photo.jpg" alt="">
+        <img :src="photo" alt="">
       </div>
       <div class="about-more-text">
         <h1>Mais sobre mim</h1>
