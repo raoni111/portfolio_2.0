@@ -68,6 +68,7 @@ const moveToView = () => {
           :id="project.id"
           :link="project.link"
           :skills="project.skill"
+          :about="project.about"
         />
       </div>
     </div>

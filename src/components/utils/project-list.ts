@@ -32,7 +32,9 @@ export default [
     cover: CoverProenca,
     link: 'https://promanute.com.br',
     imgs: [],
-    about: '',
+    about: `O site da empresa Proença foi criado para servir como uma vitrine virtual,
+            apresentando os serviços oferecidos, destacando projetos realizados,
+            exibindo parcerias importantes e facilitando o contato com a empresa.`,
     skill: [
       {
         title: 'Typescript',
@@ -58,7 +60,9 @@ export default [
     cover: CoverSecEducacao,
     link: undefined,
     imgs: [],
-    about: '',
+    about: `Sistema desenvolvido para otimizar os processos escolares,
+            reunindo em uma única plataforma as principais ferramentas utilizadas pelos pedagogos,
+            como chamada, boletins, avaliações diagnósticas e lançamento de documentos.`,
     skill: [
       {
         title: 'Typescript',

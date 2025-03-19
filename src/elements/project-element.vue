@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import SmallSkillElement from '../elements/small-skill-element.vue';
+import { ref } from 'vue'
+import SmallSkillElement from '../elements/small-skill-element.vue'
 
 defineProps({
   cover: {
@@ -19,19 +20,47 @@ defineProps({
   },
   skills: {
     type: Array<{
-      title: string;
-      icon: string;
+      title: string
+      icon: string
     }>,
+    required: true,
+  },
+  about: {
+    type: String,
     required: true,
   }
 })
+
+const displayInformation = ref(false)
+
+const toggleDisplayInformation = () => {
+  displayInformation.value = !displayInformation.value
+}
 </script>
 
 <template>
   <div class="project-element" :id="`project-index-${id}`">
     <div class="project-element-cover">
-      <div class="project-element-cover-img-content">
+      <div :class="`project-element-cover-img-content display-information-${displayInformation}`"
+        @click="toggleDisplayInformation">
         <img :src="cover" alt="" />
+        <div class="cover-more-information">
+          <div class="cover-title-content">
+            <h1 v-if="!link">{{ title }}</h1>
+            <a :href="link" v-if="link" target="_blank">
+              <h1>
+                {{ title }}
+              </h1>
+              <img v-if="link" src="../components/icons/project/link-icon.svg" />
+            </a>
+          </div>
+          <div class="project-element-cover-img-content-skill">
+            <SmallSkillElement v-for="skill in skills" :key="skill.title" :title="skill.title" :icon="skill.icon" />
+          </div>
+          <p>
+            {{ about }}
+          </p>
+        </div>
         <div class="cover-information">
           <div class="cover-title-content">
             <h1 v-if="!link">
@@ -46,13 +75,7 @@ defineProps({
             <span>click em qualquer lugar para ter mais infamações</span>
           </div>
           <div class="project-element-cover-img-content-skill">
-            <SmallSkillElement
-              v-for="skill in skills"
-
-              :key="skill.title"
-              :title="skill.title"
-              :icon="skill.icon"
-            />
+            <SmallSkillElement v-for="skill in skills" :key="skill.title" :title="skill.title" :icon="skill.icon" />
           </div>
         </div>
       </div>
@@ -63,31 +86,78 @@ defineProps({
 <style lang="scss" scoped>
 .project-element {
   width: 100dvw;
+
   .project-element-cover {
     display: flex;
     justify-content: center;
     width: 100dvw;
+
     .project-element-cover-img-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       overflow: hidden;
       position: relative;
       cursor: pointer;
       transition: transform 0.2s ease-in-out;
       transform: scale(1);
       width: 60%;
+      min-height: 100px;
       border-radius: 10px;
-      &:hover {
-        transform: scale(1.02);
-        .cover-information {
-          opacity: 1;
-        }
-      }
-      &:active {
-        transform: scale(1);
-      }
+      padding: 0rem;
+      background-color: var(--default-background);
+      transition: all 0.2s ease-in-out;
+
       img {
         width: 100%;
+        transition: all 0.2s ease-in-out;
       }
+
       z-index: 1;
+
+      .cover-more-information {
+        position: absolute;
+        opacity: 0;
+        transition: position 1s ease-in-out;
+      }
+
+      * .cover-title-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+
+        h1 {
+          color: var(--font-color-green);
+        }
+
+        span {
+          font-size: 0.9rem;
+          color: var(--font-color-gray);
+        }
+
+        a {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          text-decoration: none;
+
+          img {
+            width: 20px;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      * .project-element-cover-img-content-skill {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+        width: 100%;
+        margin-top: 0.5rem;
+        gap: 10px;
+      }
+
       .cover-information {
         position: absolute;
         display: flex;
@@ -102,40 +172,64 @@ defineProps({
         opacity: 0;
         background-color: var(--dark-background);
         transition: opacity 0.3s ease-in-out;
-        .cover-title-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: start;
-          width: 100%;
-          h1 {
-            color: var(--font-color-green);
-          }
-
-          span {
-            font-size: 0.9rem;
-            color: var(--font-color-gray);
-          }
-
-          a {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            text-decoration: none;
-            img {
-              width: 20px;
-              margin-left: 10px;
-            }
-          }
-        }
         z-index: 1;
       }
-      .project-element-cover-img-content-skill {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+    }
+
+    .project-element-cover-img-content.display-information-false {
+      &:hover {
+        transform: scale(1.02);
+
+        .cover-information {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        transform: scale(1);
+      }
+    }
+
+    .project-element-cover-img-content.display-information-true {
+      overflow-y: auto;
+      align-items: center;
+      background-color: var(--default-background);
+      transition: all 0.2s ease-in-out;
+      min-height: 600px;
+      max-height: 600px;
+      padding: 4rem;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: var(--default-background);
+        z-index: 999;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: var(--font-color-green);
+      }
+
+      .cover-more-information {
+        position: relative;
         width: 100%;
-        margin-top: 0.5rem;
-        gap: 10px;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+
+        .cover-title-content {
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        p {
+          margin-top: 1rem;
+          font-size: 1.3rem;
+          color: var(--font-color-gray);
+        }
+      }
+
+      img {
+        width: 100%;
       }
     }
   }
