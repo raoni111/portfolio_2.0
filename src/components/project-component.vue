@@ -61,7 +61,7 @@ const moveToView = () => {
       </div>
       <div class="project-component-carouse-list">
         <ProjectElement
-          v-for="project in projectList"
+          v-for="(project, index) in projectList"
           :key="project.id"
           :title="project.title"
           :cover="project.cover"
@@ -70,6 +70,7 @@ const moveToView = () => {
           :skills="project.skill"
           :about="project.about"
           :imgs="project.imgs"
+          :projectIndex="index"
         />
       </div>
     </div>

@@ -36,6 +36,10 @@ defineProps({
   imgs: {
     type: Array<string>,
     required: true,
+  },
+  projectIndex: {
+    type: Number,
+    required: true,
   }
 })
 
@@ -63,7 +67,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
             <img id="close-button" :src="CloseIcon" />
           </button>
         </div>
-        <ProjectElementImgs :imgs="[cover, ...imgs]"  :displayMoreInformation="displayInformation" />
+        <ProjectElementImgs :imgs="[cover, ...imgs]"  :displayMoreInformation="displayInformation" :projectIndex="projectIndex" />
         <div class="cover-more-information">          <div class="cover-title-content">
             <h1 v-if="!link">{{ title }}</h1>
             <a :href="link" v-if="link" target="_blank">

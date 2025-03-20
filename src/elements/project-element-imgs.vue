@@ -3,7 +3,7 @@ import {onUpdated, ref} from 'vue'
 import ArrowLeft from '../components/icons/project/arrow-left.svg';
 import ArrowRight from '../components/icons/project/arrow-right.svg';
 
-const { imgs, displayMoreInformation } = defineProps({
+const { imgs, displayMoreInformation, projectIndex } = defineProps({
   imgs: {
     type: Array<string>,
     required: true,
@@ -11,6 +11,10 @@ const { imgs, displayMoreInformation } = defineProps({
   displayMoreInformation: {
     type: Boolean,
     required: true
+  },
+  projectIndex: {
+    type: Number,
+    required: true,
   }
 });
 
@@ -40,7 +44,7 @@ const increment = () => {
 }
 
 const moveToView = () => {
-  const img = document.getElementById(`img-more-information-${imgsIndex.value}`);
+  const img = document.getElementById(`img-more-information-${imgsIndex.value}-project-index-${projectIndex}`);
 
   if (!img) {
     return;
@@ -71,7 +75,7 @@ onUpdated(() => {
       </button>
     </div>
     <div class="project-element-imgs-content">
-      <img v-for="(img, index) in imgs" :src="img" alt="imagem do projeto" :id="`img-more-information-${index}`" :key="`imgs-${index}`">
+      <img v-for="(img, index) in imgs" :src="img" alt="imagem do projeto" :id="`img-more-information-${index}-project-index-${projectIndex}`" :key="`imgs-${index}`">
     </div>
   </div>
 </template>
@@ -113,7 +117,7 @@ onUpdated(() => {
       }
 
       img {
-        width: 30px;
+        width: 20px;
       }
     }
     z-index: 3;
