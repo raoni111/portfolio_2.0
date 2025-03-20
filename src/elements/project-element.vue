@@ -1,6 +1,10 @@
 <script lang="ts" setup>
+import SmallSkillElement from '../elements/small-skill-element.vue';
+import ProjectElementImgs from '../elements/project-element-imgs.vue';
+
+import CloseIcon from '@/components/icons/project/close-icon.svg';
+
 import { ref } from 'vue'
-import SmallSkillElement from '../elements/small-skill-element.vue'
 
 defineProps({
   cover: {
@@ -28,24 +32,39 @@ defineProps({
   about: {
     type: String,
     required: true,
+  },
+  imgs: {
+    type: Array<string>,
+    required: true,
   }
 })
 
 const displayInformation = ref(false)
 
-const toggleDisplayInformation = () => {
-  displayInformation.value = !displayInformation.value
+const toggleDisplayInformation = (preload: MouseEvent) => {
+  const target = preload.target as HTMLElement;
+  console.log(target.id);
+
+  if (target.tagName === 'BUTTON' && target.id === "close-button" || target.id === "close-button") {
+    displayInformation.value = false;
+    return;
+  }
+
+  displayInformation.value = true;
 }
 </script>
 
 <template>
   <div class="project-element" :id="`project-index-${id}`">
     <div class="project-element-cover">
-      <div :class="`project-element-cover-img-content display-information-${displayInformation}`"
-        @click="toggleDisplayInformation">
-        <img :src="cover" alt="" />
-        <div class="cover-more-information">
-          <div class="cover-title-content">
+      <div :class="`project-element-cover-img-content display-information-${displayInformation}`" @click="toggleDisplayInformation">
+        <div class="close-button-content">
+          <button class="close-button" @click="toggleDisplayInformation" id="close-button">
+            <img id="close-button" :src="CloseIcon" />
+          </button>
+        </div>
+        <ProjectElementImgs :imgs="[cover, ...imgs]"  :displayMoreInformation="displayInformation" />
+        <div class="cover-more-information">          <div class="cover-title-content">
             <h1 v-if="!link">{{ title }}</h1>
             <a :href="link" v-if="link" target="_blank">
               <h1>
@@ -107,7 +126,21 @@ const toggleDisplayInformation = () => {
       padding: 0rem;
       background-color: var(--default-background);
       transition: all 0.2s ease-in-out;
-
+      .close-button-content {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        .close-button {
+          cursor: pointer;
+          background-color: #0000;
+          border: none;
+          color: var(--font-color-green);
+          margin-bottom: 1rem;
+          img {
+            width: 40px;
+          }
+        }
+      }
       img {
         width: 100%;
         transition: all 0.2s ease-in-out;
@@ -177,6 +210,9 @@ const toggleDisplayInformation = () => {
     }
 
     .project-element-cover-img-content.display-information-false {
+      .close-button {
+        display: none;
+      }
       &:hover {
         transform: scale(1.02);
 
@@ -198,6 +234,11 @@ const toggleDisplayInformation = () => {
       min-height: 600px;
       max-height: 600px;
       padding: 4rem;
+      padding-top: 2rem;
+
+      .close-button {
+        display: block;
+      }
 
       &::-webkit-scrollbar {
         width: 5px;

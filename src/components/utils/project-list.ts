@@ -1,4 +1,13 @@
+
+// Photo Proença
 import CoverProenca from '../icons/project/project-img/proenca/capa-proenca.png';
+import proenca1 from '../icons/project/project-img/proenca/proeca-1.png';
+import proenca2 from '../icons/project/project-img/proenca/proeca-2.png';
+import proenca3 from '../icons/project/project-img/proenca/proeca-3.png';
+import proenca4 from '../icons/project/project-img/proenca/proeca-4.png';
+import proenca5 from '../icons/project/project-img/proenca/proeca-5.png';
+
+// Photo Sistema de Gerenciamento escolar
 import CoverSecEducacao from '../icons/project/project-img/sec-educacao/capa-sec-educacao.png';
 
 // icons Front End
@@ -31,7 +40,13 @@ export default [
     title: 'Proença',
     cover: CoverProenca,
     link: 'https://promanute.com.br',
-    imgs: [],
+    imgs: [
+      proenca1,
+      proenca2,
+      proenca3,
+      proenca4,
+      proenca5,
+    ],
     about: `O site da empresa Proença foi criado para servir como uma vitrine virtual,
             apresentando os serviços oferecidos, destacando projetos realizados,
             exibindo parcerias importantes e facilitando o contato com a empresa.`,
