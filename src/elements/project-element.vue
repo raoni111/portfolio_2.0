@@ -4,7 +4,8 @@ import ProjectElementImgs from '../elements/project-element-imgs.vue';
 
 import CloseIcon from '@/components/icons/project/close-icon.svg';
 
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { useDisplayButtonsStore } from '@/stores/displayButtons';
 
 defineProps({
   cover: {
@@ -43,18 +44,20 @@ defineProps({
   }
 })
 
-const displayInformation = ref(false)
+const displayInformation = ref(false);
+
+const store = useDisplayButtonsStore();
 
 const toggleDisplayInformation = (preload: MouseEvent) => {
   const target = preload.target as HTMLElement;
-  console.log(target.id);
-
   if (target.tagName === 'BUTTON' && target.id === "close-button" || target.id === "close-button") {
     displayInformation.value = false;
+    store.enable()
     return;
   }
 
   displayInformation.value = true;
+  store.disable()
 }
 </script>
 
@@ -62,6 +65,23 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
   <div class="project-element" :id="`project-index-${id}`">
     <div class="project-element-cover">
       <div :class="`project-element-cover-img-content display-information-${displayInformation}`" @click="toggleDisplayInformation">
+        <div class="cover-information">
+          <div class="cover-title-content">
+            <h1 v-if="!link">
+              {{ title }}
+            </h1>
+            <a :href="link" v-if="link" target="_blank">
+              <h1>
+                {{ title }}
+              </h1>
+              <img v-if="link" src="../components/icons/project/link-icon.svg" />
+            </a>
+            <span>click em qualquer lugar para ter mais infamações</span>
+          </div>
+          <div class="project-element-cover-img-content-skill">
+            <SmallSkillElement v-for="skill in skills" :key="skill.title" :title="skill.title" :icon="skill.icon" />
+          </div>
+        </div>
         <div class="close-button-content">
           <button class="close-button" @click="toggleDisplayInformation" id="close-button">
             <img id="close-button" :src="CloseIcon" />
@@ -83,23 +103,6 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
           <p>
             {{ about }}
           </p>
-        </div>
-        <div class="cover-information">
-          <div class="cover-title-content">
-            <h1 v-if="!link">
-              {{ title }}
-            </h1>
-            <a :href="link" v-if="link" target="_blank">
-              <h1>
-                {{ title }}
-              </h1>
-              <img v-if="link" src="../components/icons/project/link-icon.svg" />
-            </a>
-            <span>click em qualquer lugar para ter mais infamações</span>
-          </div>
-          <div class="project-element-cover-img-content-skill">
-            <SmallSkillElement v-for="skill in skills" :key="skill.title" :title="skill.title" :icon="skill.icon" />
-          </div>
         </div>
       </div>
     </div>
@@ -209,7 +212,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
         opacity: 0;
         background-color: var(--dark-background);
         transition: opacity 0.3s ease-in-out;
-        z-index: 1;
+        z-index: 5;
       }
     }
 
@@ -275,6 +278,63 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
 
       img {
         width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .project-element {
+    .project-element-cover {
+      .project-element-cover-img-content {
+        width: 70%;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .project-element {
+    .project-element-cover {
+      .project-element-cover-img-content {
+        width: 80%;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .project-element {
+    .project-element-cover {
+      .project-element-cover-img-content {
+        width: 90%;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .project-element {
+    .project-element-cover {
+      .project-element-cover-img-content {
+        width: 100%;
+      }
+      .project-element-cover-img-content.display-information-true {
+        padding: 3rem;
+        min-height: 100dvh;
+        max-height: 100dvh;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .project-element {
+    .project-element-cover {
+      .project-element-cover-img-content {
+        width: 100%;
+        .cover-information {
+          display: none;
+        }
+      }
+      .project-element-cover-img-content.display-information-true {
+        padding: 1rem;
       }
     }
   }

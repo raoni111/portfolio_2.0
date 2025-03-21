@@ -9,11 +9,17 @@ import ArrowLeft from './icons/project/arrow-left.svg';
 import ArrowRight from './icons/project/arrow-right.svg';
 
 import projectList from './utils/project-list';
+import { storeToRefs } from 'pinia';
+import { useDisplayButtonsStore } from '@/stores/displayButtons';
 
 
 const projectsLength = projectList.length;
 
 const projectIndex = ref(1);
+
+const store = useDisplayButtonsStore();
+
+const { displayButton } = storeToRefs(store);
 
 const increment = () => {
   if ((projectIndex.value + 1) > projectsLength) {
@@ -34,7 +40,6 @@ const decrement = () => {
 
 const moveToView = () => {
   const element = document.getElementById(`project-index-${projectIndex.value}`);
-
   if (!element) {
     return;
   }
@@ -49,12 +54,12 @@ const moveToView = () => {
 <template>
   <section class="project-component">
     <div class="project-component-carousel">
-      <div class="project-carousel-button-content">
+      <div :class="`project-carousel-button-content display-button-${displayButton}`">
         <button class="project-carousel-button" @click="decrement">
           <img :src="ArrowLeft" alt="seta do carrossel apontado para esquerda" />
         </button>
       </div>
-      <div class="project-carousel-button-content">
+      <div :class="`project-carousel-button-content display-button-${displayButton}`">
         <button class="project-carousel-button" @click="increment">
           <img :src="ArrowRight" alt="seta do carrossel apontado para direita" />
         </button>
@@ -94,6 +99,7 @@ const moveToView = () => {
       align-items: center;
       position: absolute;
       height: 100vh;
+      z-index: 2;
       &:nth-child(1) {
         left: 0px;
       }
@@ -105,15 +111,29 @@ const moveToView = () => {
         background-color: #0000;
         border: none;
         padding: 0rem 1rem;
-        transition: transform 0.1s ease-in-out;
         &:hover {
           transform: scale(1.2);
         }
         &:active {
           transform: scale(1);
         }
-        img {
-          width: 25px;
+      }
+      &.display-button-true {
+        .project-carousel-button {
+          opacity: 1;
+          transition: all 0.2s ease-in-out;
+          img {
+            width: 25px;
+          }
+        }
+      }
+      &.display-button-false {
+        .project-carousel-button {
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+          img {
+            width: 0px;
+          }
         }
       }
     }
