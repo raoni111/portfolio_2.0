@@ -26,7 +26,6 @@
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--light-background);
-    box-shadow: 0px 0px 40px rgba(0, 255, 221, 0.055);
     border-radius: 8px;
 
     img {
