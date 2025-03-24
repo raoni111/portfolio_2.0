@@ -7,8 +7,21 @@ import proenca3 from '../icons/project/project-img/proenca/proeca-3.png';
 import proenca4 from '../icons/project/project-img/proenca/proeca-4.png';
 import proenca5 from '../icons/project/project-img/proenca/proeca-5.png';
 
+
 // Photo Sistema de Gerenciamento escolar
 import CoverSecEducacao from '../icons/project/project-img/sec-educacao/capa-sec-educacao.png';
+import educacao1 from '../icons/project/project-img/sec-educacao/1-sec-educacao.png';
+import educacao2 from '../icons/project/project-img/sec-educacao/2-sec-educacao.png';
+import educacao3 from '../icons/project/project-img/sec-educacao/3-sec-educacao.png';
+import educacao4 from '../icons/project/project-img/sec-educacao/4-sec-educacao.png';
+import educacao5 from '../icons/project/project-img/sec-educacao/5-sec-educacao.png';
+import educacao6 from '../icons/project/project-img/sec-educacao/6-sec-educacao.png';
+import educacao7 from '../icons/project/project-img/sec-educacao/7-sec-educacao.png';
+import educacao8 from '../icons/project/project-img/sec-educacao/8-sec-educacao.png';
+import educacao9 from '../icons/project/project-img/sec-educacao/9-sec-educacao.png';
+import educacao10 from '../icons/project/project-img/sec-educacao/10-sec-educacao.png';
+import educacao11 from '../icons/project/project-img/sec-educacao/11-sec-educacao.png';
+import educacao12 from '../icons/project/project-img/sec-educacao/12-sec-educacao.png';
 
 // icons Front End
 // import CssIcon from '@/components/icons/skills/front-end/CSS3.svg';
@@ -74,7 +87,20 @@ export default [
     title: 'Sistema de gerenciamento escolar',
     cover: CoverSecEducacao,
     link: undefined,
-    imgs: [],
+    imgs: [
+      educacao1,
+      educacao2,
+      educacao3,
+      educacao4,
+      educacao5,
+      educacao6,
+      educacao7,
+      educacao8,
+      educacao9,
+      educacao10,
+      educacao11,
+      educacao12,
+    ],
     about: `Sistema desenvolvido para otimizar os processos escolares,
             reunindo em uma única plataforma as principais ferramentas utilizadas pelos pedagogos,
             como chamada, boletins, avaliações diagnósticas e lançamento de documentos.`,

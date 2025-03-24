@@ -339,4 +339,14 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
     }
   }
 }
+@media (max-height: 550px) {
+  .project-element {
+    .project-element-cover {
+      .project-element-cover-img-content {
+        height: 100%;
+        min-height: auto;
+      }
+    }
+  }
+}
 </style>

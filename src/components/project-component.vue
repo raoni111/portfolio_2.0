@@ -53,6 +53,7 @@ const moveToView = () => {
 
 <template>
   <section class="project-component">
+    <h1 class="project-component-title">Projetos</h1>
     <div class="project-component-carousel">
       <div :class="`project-carousel-button-content display-button-${displayButton}`">
         <button class="project-carousel-button" @click="decrement">
@@ -84,14 +85,23 @@ const moveToView = () => {
 
 <style lang="scss" scoped>
 .project-component {
+  position: relative;
   width: 100dvw;
-  height: 100dvh;
+  min-height: 100dvh;
   background: rgb(38, 50, 56);
   background: -moz-linear-gradient(45deg, rgba(38, 50, 56, 1) 0%, rgba(30, 54, 50, 1) 67%);
   background: -webkit-linear-gradient(45deg, rgba(38, 50, 56, 1) 0%, rgba(30, 54, 50, 1) 67%);
   background: linear-gradient(45deg, rgba(38, 50, 56, 1) 0%, rgba(30, 54, 50, 1) 67%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#263238",endColorstr="#1e3632",GradientType=1);
-
+  .project-component-title {
+    position: absolute;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 2rem;
+    padding-bottom: 0rem;
+    text-align: center;
+    color: var(--font-color-green);
+  }
   .project-component-carousel {
     .project-carousel-button-content {
       display: flex;

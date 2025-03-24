@@ -24,23 +24,24 @@ const imgsIndex = ref(0);
 
 const decrement = () => {
   if ((imgsIndex.value - 1) < 0) {
+    imgsIndex.value = imgLength.value;
+    moveToView()
     return;
   }
 
   imgsIndex.value--;
-
   moveToView();
 }
 
 const increment = () => {
-  if ((imgsIndex.value + 1) > imgLength.value) {
+  if ((imgsIndex.value + 1) >= imgLength.value) {
+    imgsIndex.value = 0;
+    moveToView()
     return;
   }
 
   imgsIndex.value++;
-
   moveToView();
-
 }
 
 const moveToView = () => {

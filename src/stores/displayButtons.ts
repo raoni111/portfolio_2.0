@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useDisplayButtonsStore = defineStore('display', () => {
-  const displayButton = ref(false);
+  const displayButton = ref(true);
 
 
   function disable() {
