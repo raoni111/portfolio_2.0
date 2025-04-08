@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import SmallSkillElement from '../elements/small-skill-element.vue';
-import ProjectElementImgs from '../elements/project-element-imgs.vue';
+import SmallSkillElement from '../elements/small-skill-element.vue'
+import ProjectElementImgs from '../elements/project-element-imgs.vue'
 
-import CloseIcon from '@/components/icons/project/close-icon.svg';
+import CloseIcon from '@/components/icons/project/close-icon.svg'
 
-import { ref } from 'vue';
-import { useDisplayButtonsStore } from '@/stores/displayButtons';
+import { ref } from 'vue'
+import { useDisplayButtonsStore } from '@/stores/displayButtons'
 
 defineProps({
   cover: {
@@ -41,22 +41,28 @@ defineProps({
   projectIndex: {
     type: Number,
     required: true,
-  }
+  },
 })
 
-const displayInformation = ref(false);
+const displayInformation = ref(false)
 
-const store = useDisplayButtonsStore();
+const store = useDisplayButtonsStore()
 
 const toggleDisplayInformation = (preload: MouseEvent) => {
-  const target = preload.target as HTMLElement;
-  if (target.tagName === 'BUTTON' && target.id === "close-button" || target.id === "close-button") {
-    displayInformation.value = false;
+  const target = preload.target as HTMLElement
+  if (
+    (target.tagName === 'BUTTON' && target.id === 'close-button') ||
+    target.id === 'close-button'
+  ) {
+    displayInformation.value = false
     store.enable()
-    return;
+
+    document.body.style.overflowY = 'auto'
+    return
   }
 
-  displayInformation.value = true;
+  displayInformation.value = true
+  document.body.style.overflowY = 'hidden'
   store.disable()
 }
 </script>
@@ -64,7 +70,10 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
 <template>
   <div class="project-element" :id="`project-index-${id}`">
     <div class="project-element-cover">
-      <div :class="`project-element-cover-img-content display-information-${displayInformation}`" @click="toggleDisplayInformation">
+      <div
+        :class="`project-element-cover-img-content display-information-${displayInformation}`"
+        @click="toggleDisplayInformation"
+      >
         <div class="cover-information">
           <div class="cover-title-content">
             <h1 v-if="!link">
@@ -79,7 +88,12 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
             <span>click em qualquer lugar para ter mais infamações</span>
           </div>
           <div class="project-element-cover-img-content-skill">
-            <SmallSkillElement v-for="skill in skills" :key="skill.title" :title="skill.title" :icon="skill.icon" />
+            <SmallSkillElement
+              v-for="skill in skills"
+              :key="skill.title"
+              :title="skill.title"
+              :icon="skill.icon"
+            />
           </div>
         </div>
         <div class="close-button-content">
@@ -87,8 +101,13 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
             <img id="close-button" :src="CloseIcon" />
           </button>
         </div>
-        <ProjectElementImgs :imgs="[cover, ...imgs]"  :displayMoreInformation="displayInformation" :projectIndex="projectIndex" />
-        <div class="cover-more-information">          <div class="cover-title-content">
+        <ProjectElementImgs
+          :imgs="[cover, ...imgs]"
+          :displayMoreInformation="displayInformation"
+          :projectIndex="projectIndex"
+        />
+        <div class="cover-more-information">
+          <div class="cover-title-content">
             <h1 v-if="!link">{{ title }}</h1>
             <a :href="link" v-if="link" target="_blank">
               <h1>
@@ -98,7 +117,12 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
             </a>
           </div>
           <div class="project-element-cover-img-content-skill">
-            <SmallSkillElement v-for="skill in skills" :key="skill.title" :title="skill.title" :icon="skill.icon" />
+            <SmallSkillElement
+              v-for="skill in skills"
+              :key="skill.title"
+              :title="skill.title"
+              :icon="skill.icon"
+            />
           </div>
           <p>
             {{ about }}
@@ -132,7 +156,6 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
       border-radius: 10px;
       padding: 0rem;
       background-color: var(--default-background);
-      transition: all 0.2s ease-in-out;
       .close-button-content {
         display: flex;
         justify-content: flex-start;
@@ -234,21 +257,23 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
     }
 
     .project-element-cover-img-content.display-information-true {
+      position: fixed;
+      top: 0px;
+      left: 0px;
       overflow-y: auto;
       align-items: center;
       background-color: var(--default-background);
-      transition: all 0.2s ease-in-out;
-      min-height: 600px;
-      max-height: 600px;
+      width: 100dvw;
+      height: 100dvh;
       padding: 4rem;
       padding-top: 2rem;
-
+      z-index: 999;
       .close-button {
         display: block;
       }
 
       &::-webkit-scrollbar {
-        width: 5px;
+        width: 10px;
         background-color: var(--default-background);
         z-index: 999;
       }
@@ -256,6 +281,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
       &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: var(--font-color-green);
+        z-index: 999;
       }
 
       .cover-more-information {
@@ -263,8 +289,6 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
         width: 100%;
         opacity: 1;
         transition: opacity 1s ease-in-out;
-
-        .cover-title-content {
           width: 100%;
           margin-top: 1rem;
         }
@@ -281,7 +305,6 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
       }
     }
   }
-}
 
 @media (max-width: 1250px) {
   .project-element {
