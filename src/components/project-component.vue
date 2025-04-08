@@ -46,6 +46,8 @@ const moveToView = () => {
 
   element.scrollIntoView({
     behavior: 'smooth',
+    block: 'center',
+    inline: 'center'
   });
 }
 

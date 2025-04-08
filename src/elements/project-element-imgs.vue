@@ -53,6 +53,8 @@ const moveToView = () => {
 
   img.scrollIntoView({
     behavior: 'smooth',
+    block: 'center',
+    inline: 'center'
   })
 }
 

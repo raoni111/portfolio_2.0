@@ -12,16 +12,14 @@
       <div class="about-more-text">
         <h1>Mais sobre mim</h1>
         <p>
-          Meu nome é Raoni e sou desenvolvedor de software com experiência desde os 16 anos.
-          Atualmente, sou responsável pelo desenvolvimento e manutenção de um SaaS de administração
-          escolar, que criei e distribuo para escolas, centralizando informações acadêmicas e
-          auxiliando na gestão pedagógica. Além do desenvolvimento full stack, atuo diretamente na
-          implementação do sistema, garantindo sua adaptação às necessidades dos usuários.<br /><br />
-
-          Tenho amplo domínio em JavaScript, TypeScript e Python, além de experiência com React,
-          Vue.js e Flask. Minha experiência como desenvolvedor autônomo me proporcionou habilidades
-          valiosas, como autonomia na resolução de problemas, comunicação eficaz com clientes e
-          capacidade de adaptar soluções às necessidades reais do usuário.
+          Meu nome é Raoni e sou desenvolvedor de software desde os 16 anos, com dois anos de experiência profissional. <br /> <br />
+          Atualmente, sou responsável pelo desenvolvimento e manutenção de um SaaS de administração escolar,
+          uma solução que criei e distribuo para escolas,
+          centralizando informações acadêmicas e otimizando a gestão pedagógica. Além do desenvolvimento full stack,
+          atuo diretamente na implementação do sistema, garantindo que ele se adapte às necessidades dos usuários. <br /> <br />
+          Possuo amplo domínio em JavaScript, TypeScript e Python, além de experiência com React, Vue.js e Flask.
+          Minha trajetória como desenvolvedor autônomo me proporcionou habilidades valiosas, como autonomia na resolução de problemas,
+          comunicação eficaz com clientes e adaptação de soluções às necessidades reais dos usuários.
         </p>
       </div>
     </div>
