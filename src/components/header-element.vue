@@ -65,7 +65,6 @@ import LinkedinIcon from './icons/header/linkedin-icon.vue'
           .social-name {
             margin-left: 1rem;
             font-size: 1.4rem;
-            font-weight: 300;
             color: var(--font-color-gray);
           }
         }

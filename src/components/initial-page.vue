@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import BookSvg from './icons/main/book-svg.vue';
+import HeartSvg from './icons/main/heart-svg.vue';
+import PcSvg from './icons/main/pc-svg.vue';
 import ProgrammingSvg from './icons/main/programming-svg.vue'
+import ShieldSvg from './icons/main/shield-svg.vue';
+import ToolSvg from './icons/main/tool-svg.vue';
+import getExperienceYear from './utils/experience-year';
 </script>
 
 <template>
@@ -10,14 +16,28 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
           <span>Ola, meu nome e</span>
           <h1>Raoni Oliveira Quevedo</h1>
           <h2>Full Stack Developer</h2>
-          <p>
-            Desenvolvedor de software desde os 16 anos, tenho 2.5 anos de experiência profissional,
-            com expertise em JavaScript, TypeScript e Python. Minha trajetória na programação
-            começou cedo, motivada pela paixão em criar soluções práticas e inovadoras.
-          </p>
+          <ul class="about-topics">
+            <li class="topics">
+              <PcSvg class="icon"/>{{ getExperienceYear() }} de experiência profissional
+            </li>
+            <li class="topics">
+              <HeartSvg class="icon"/>Apaixonado por tecnologia e games.
+            </li>
+            <li class="topics">
+              <ShieldSvg class="icon"/>Resiliente
+            </li>
+            <li class="topics">
+              <ToolSvg  class="icon"/>Tenho experiência em TypeScript, Javascript, Python, React e Vue.js
+            </li>
+            <li class="topics">
+              <BookSvg class="icon"/>Atualmente estou estudando C# e .NET
+            </li>
+          </ul>
         </div>
         <div class="about-more-button-content section-initial-page">
-          <button class="about-more-button">Mais sobre mim</button>
+          <a href="#about-more-container">
+            <button class="about-more-button">Mais sobre mim</button>
+          </a>
         </div>
       </div>
       <div class="initial-page-img">
@@ -27,7 +47,7 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
   </article>
 </template>
 
-<style lang="scss" scoped >
+<style lang="scss" scoped>
 .initial-page {
   display: flex;
   justify-content: center;
@@ -60,15 +80,29 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
           color: var(--font-color-gray-dark);
         }
 
-        p {
-          font-size: 1.5rem;
-          margin-top: 1rem;
-          color: var(--font-color-gray-dark);
+        .about-topics {
+          padding: 0px;
+          list-style: none;
+          margin-left: 1rem;
+          .topics {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--font-color-gray);
+            margin-top: 20px;
+            .icon {
+              width: 20px;
+              height: 20px;
+              color: var(--font-color-green);
+              margin-right: 1rem;
+            }
+          }
         }
       }
 
       .about-more-button-content {
-        margin-top: 4rem;
+        margin-top: 3rem;
 
         .about-more-button {
           cursor: pointer;
@@ -99,7 +133,6 @@ import ProgrammingSvg from './icons/main/programming-svg.vue'
   .initial-page {
     .initial-page-about-section {
       width: 80%;
-
     }
   }
 }
