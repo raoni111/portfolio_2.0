@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import BookSvg from './icons/main/book-svg.vue';
-import HeartSvg from './icons/main/heart-svg.vue';
-import PcSvg from './icons/main/pc-svg.vue';
+import BookSvg from './icons/main/book-svg.vue'
+import HeartSvg from './icons/main/heart-svg.vue'
+import PcSvg from './icons/main/pc-svg.vue'
 import ProgrammingSvg from './icons/main/programming-svg.vue'
-import ShieldSvg from './icons/main/shield-svg.vue';
-import ToolSvg from './icons/main/tool-svg.vue';
-import getExperienceYear from './utils/experience-year';
+import ShieldSvg from './icons/main/shield-svg.vue'
+import ToolSvg from './icons/main/tool-svg.vue'
+import getExperienceYear from './utils/experience-year'
 </script>
 
 <template>
@@ -18,20 +18,15 @@ import getExperienceYear from './utils/experience-year';
           <h2>Full Stack Developer</h2>
           <ul class="about-topics">
             <li class="topics">
-              <PcSvg class="icon"/>{{ getExperienceYear() }} de experiência profissional
+              <PcSvg class="icon" />{{ getExperienceYear() }} de experiência profissional
             </li>
+            <li class="topics"><HeartSvg class="icon" />Apaixonado por tecnologia e games.</li>
+            <li class="topics"><ShieldSvg class="icon" />Resiliente</li>
             <li class="topics">
-              <HeartSvg class="icon"/>Apaixonado por tecnologia e games.
+              <ToolSvg class="icon" />Tenho experiência em TypeScript, Javascript, Python, React e
+              Vue.js
             </li>
-            <li class="topics">
-              <ShieldSvg class="icon"/>Resiliente
-            </li>
-            <li class="topics">
-              <ToolSvg  class="icon"/>Tenho experiência em TypeScript, Javascript, Python, React e Vue.js
-            </li>
-            <li class="topics">
-              <BookSvg class="icon"/>Atualmente estou estudando C# e .NET
-            </li>
+            <li class="topics"><BookSvg class="icon" />Atualmente estou estudando C# e .NET</li>
           </ul>
         </div>
         <div class="about-more-button-content section-initial-page">

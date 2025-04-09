@@ -1,56 +1,53 @@
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script lang="ts" setup>
+import { ref } from 'vue'
 
-import { ref } from 'vue';
+import ProjectElement from '@/elements/project-element.vue'
 
-import ProjectElement from '@/elements/project-element.vue';
+import ArrowLeft from './icons/project/arrow-left.svg'
+import ArrowRight from './icons/project/arrow-right.svg'
 
-import ArrowLeft from './icons/project/arrow-left.svg';
-import ArrowRight from './icons/project/arrow-right.svg';
+import projectList from './utils/project-list'
+import { storeToRefs } from 'pinia'
+import { useDisplayButtonsStore } from '@/stores/displayButtons'
 
-import projectList from './utils/project-list';
-import { storeToRefs } from 'pinia';
-import { useDisplayButtonsStore } from '@/stores/displayButtons';
+const projectsLength = projectList.length
 
+const projectIndex = ref(1)
 
-const projectsLength = projectList.length;
+const store = useDisplayButtonsStore()
 
-const projectIndex = ref(1);
-
-const store = useDisplayButtonsStore();
-
-const { displayButton } = storeToRefs(store);
+const { displayButton } = storeToRefs(store)
 
 const increment = () => {
-  if ((projectIndex.value + 1) > projectsLength) {
-    return;
+  if (projectIndex.value + 1 > projectsLength) {
+    return
   }
 
-  projectIndex.value++;
+  projectIndex.value++
   moveToView()
 }
 const decrement = () => {
-  if ((projectIndex.value - 1) < 1) {
-    return;
+  if (projectIndex.value - 1 < 1) {
+    return
   }
 
-  projectIndex.value--;
+  projectIndex.value--
   moveToView()
 }
 
 const moveToView = () => {
-  const element = document.getElementById(`project-index-${projectIndex.value}`);
+  const element = document.getElementById(`project-index-${projectIndex.value}`)
   if (!element) {
-    return;
+    return
   }
 
   element.scrollIntoView({
     behavior: 'smooth',
     block: 'center',
-    inline: 'center'
-  });
+    inline: 'center',
+  })
 }
-
 </script>
 
 <template>

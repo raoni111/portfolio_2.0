@@ -45,7 +45,11 @@ import getExperienceYear from './utils/experience-year'
     </div>
     <div class="footer-copyright">
       <p>
-        Todos os direitos reservados para <a href="https://www.linkedin.com/in/raoni-oliveira-quevedo-3719871b3">© Raoni Oliveira Quevedo</a> {{ new Date().getFullYear() }}
+        Todos os direitos reservados para
+        <a href="https://www.linkedin.com/in/raoni-oliveira-quevedo-3719871b3"
+          >© Raoni Oliveira Quevedo</a
+        >
+        {{ new Date().getFullYear() }}
       </p>
     </div>
   </section>

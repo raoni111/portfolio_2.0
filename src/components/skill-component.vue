@@ -1,64 +1,64 @@
 <script setup lang="ts">
-  import SkillElement from '@/elements/skill-element.vue'
+import SkillElement from '@/elements/skill-element.vue'
 
-  // icons Front End
-  import CssIcon from '@/components/icons/skills/front-end/CSS3.svg';
-  import HtmlIcon from '@/components/icons/skills/front-end/HTML5.svg';
-  import JavascriptIcon from '@/components/icons/skills/front-end/js.png';
-  import PythonIcon from '@/components/icons/skills/front-end/python.svg';
-  import ReactIcon from '@/components/icons/skills/front-end/React-icon.png';
-  import SassIcon from '@/components/icons/skills/front-end/Sass.png';
-  import TailwindIcon from '@/components/icons/skills/front-end/Tailwind_CSS.png';
-  import TypescriptIcon from '@/components/icons/skills/front-end/typescript.png';
-  import VueIcon from '@/components/icons/skills/front-end/Vue.png';
-  import Electron from '@/components/icons/skills/front-end/electron.png';
-  import Next from '@/components/icons/skills/front-end/next.webp';
+// icons Front End
+import CssIcon from '@/components/icons/skills/front-end/CSS3.svg'
+import HtmlIcon from '@/components/icons/skills/front-end/HTML5.svg'
+import JavascriptIcon from '@/components/icons/skills/front-end/js.png'
+import PythonIcon from '@/components/icons/skills/front-end/python.svg'
+import ReactIcon from '@/components/icons/skills/front-end/React-icon.png'
+import SassIcon from '@/components/icons/skills/front-end/Sass.png'
+import TailwindIcon from '@/components/icons/skills/front-end/Tailwind_CSS.png'
+import TypescriptIcon from '@/components/icons/skills/front-end/typescript.png'
+import VueIcon from '@/components/icons/skills/front-end/Vue.png'
+import Electron from '@/components/icons/skills/front-end/electron.png'
+import Next from '@/components/icons/skills/front-end/next.webp'
 
-  // Icons Back End
-  import DockerIcon from '@/components/icons/skills/back-end/docker.png';
-  import ExpressIcon from '@/components/icons/skills/back-end/express-js.svg';
-  import FirebaseIcon from '@/components/icons/skills/back-end/firebase.png';
-  import FlaskIcon from '@/components/icons/skills/back-end/flask.svg';
-  import MySQLIcon from '@/components/icons/skills/back-end/my-sql.png';
-  import NestIcon from '@/components/icons/skills/back-end/nest-js-icon.png';
-  import NodeIcon from '@/components/icons/skills/back-end/nodejs.svg';
-  import Aws from '@/components/icons/skills/back-end/aws.webp';
-  import SocketIo from '@/components/icons/skills/back-end/socket-io.svg';
-  import PHPIcon from '@/components/icons/skills/back-end/PHP.svg';
-  import CSharp from '@/components/icons/skills/back-end/C_Sharp.png';
-  import GCP from '@/components/icons/skills/back-end/GCP.webp';
+// Icons Back End
+import DockerIcon from '@/components/icons/skills/back-end/docker.png'
+import ExpressIcon from '@/components/icons/skills/back-end/express-js.svg'
+import FirebaseIcon from '@/components/icons/skills/back-end/firebase.png'
+import FlaskIcon from '@/components/icons/skills/back-end/flask.svg'
+import MySQLIcon from '@/components/icons/skills/back-end/my-sql.png'
+import NestIcon from '@/components/icons/skills/back-end/nest-js-icon.png'
+import NodeIcon from '@/components/icons/skills/back-end/nodejs.svg'
+import Aws from '@/components/icons/skills/back-end/aws.webp'
+import SocketIo from '@/components/icons/skills/back-end/socket-io.svg'
+import PHPIcon from '@/components/icons/skills/back-end/PHP.svg'
+import CSharp from '@/components/icons/skills/back-end/C_Sharp.png'
+import GCP from '@/components/icons/skills/back-end/GCP.webp'
 
-  const frontEndSkills = [
-    { src: JavascriptIcon, title: "JavaScript" },
-    { src: TypescriptIcon, title: "TypeScript" },
-    { src: PythonIcon, title: "Python" },
-    { src: HtmlIcon, title: "HTML5" },
-    { src: CssIcon, title: "CSS3" },
-    { src: SassIcon, title: "Sass" },
-    { src: VueIcon, title: "Vue.js" },
-    { src: ReactIcon, title: "React" },
-    { src: ReactIcon, title: "React Native" },
-    { src: Electron, title: "Electron.JS" },
-    { src: TailwindIcon, title: "Tailwind CSS" },
-    { src: Next, title: "Next.JS"},
-  ];
+const frontEndSkills = [
+  { src: JavascriptIcon, title: 'JavaScript' },
+  { src: TypescriptIcon, title: 'TypeScript' },
+  { src: PythonIcon, title: 'Python' },
+  { src: HtmlIcon, title: 'HTML5' },
+  { src: CssIcon, title: 'CSS3' },
+  { src: SassIcon, title: 'Sass' },
+  { src: VueIcon, title: 'Vue.js' },
+  { src: ReactIcon, title: 'React' },
+  { src: ReactIcon, title: 'React Native' },
+  { src: Electron, title: 'Electron.JS' },
+  { src: TailwindIcon, title: 'Tailwind CSS' },
+  { src: Next, title: 'Next.JS' },
+]
 
-  const backEndSkills = [
-    { src: NodeIcon, title: "Node.js" },
-    { src: TypescriptIcon, title: "TypeScript" },
-    { src: PythonIcon, title: "Python"},
-    { src: PHPIcon, title: "PHP" },
-    { src: CSharp, title: "C#" },
-    { src: ExpressIcon, title: "Express.js" },
-    { src: FlaskIcon, title: "Flask" },
-    { src: NestIcon, title: "NestJS" },
-    { src: MySQLIcon, title: "MySQL" },
-    { src: DockerIcon, title: "Docker" },
-    { src: FirebaseIcon, title: "Firebase" },
-    { src: GCP, title: "GCP" },
-    { src: Aws, title: "AWS" },
-    { src: SocketIo, title: "Socket.io" },
-  ];
+const backEndSkills = [
+  { src: NodeIcon, title: 'Node.js' },
+  { src: TypescriptIcon, title: 'TypeScript' },
+  { src: PythonIcon, title: 'Python' },
+  { src: PHPIcon, title: 'PHP' },
+  { src: CSharp, title: 'C#' },
+  { src: ExpressIcon, title: 'Express.js' },
+  { src: FlaskIcon, title: 'Flask' },
+  { src: NestIcon, title: 'NestJS' },
+  { src: MySQLIcon, title: 'MySQL' },
+  { src: DockerIcon, title: 'Docker' },
+  { src: FirebaseIcon, title: 'Firebase' },
+  { src: GCP, title: 'GCP' },
+  { src: Aws, title: 'AWS' },
+  { src: SocketIo, title: 'Socket.io' },
+]
 </script>
 
 <template>
@@ -148,10 +148,10 @@
   .skill-component {
     .skill-content {
       .sector-content {
-      .skill-list {
-        gap: 15px;
+        .skill-list {
+          gap: 15px;
+        }
       }
-    }
     }
   }
 }

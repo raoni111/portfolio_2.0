@@ -289,22 +289,22 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
         width: 100%;
         opacity: 1;
         transition: opacity 1s ease-in-out;
-          width: 100%;
-          margin-top: 1rem;
-        }
-
-        p {
-          margin-top: 1rem;
-          font-size: 1.3rem;
-          color: var(--font-color-gray);
-        }
+        width: 100%;
+        margin-top: 1rem;
       }
 
-      img {
-        width: 100%;
+      p {
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        color: var(--font-color-gray);
       }
     }
+
+    img {
+      width: 100%;
+    }
   }
+}
 
 @media (max-width: 1250px) {
   .project-element {

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import {onUpdated, ref} from 'vue'
-import ArrowLeft from '../components/icons/project/arrow-left.svg';
-import ArrowRight from '../components/icons/project/arrow-right.svg';
+import { onUpdated, ref } from 'vue'
+import ArrowLeft from '../components/icons/project/arrow-left.svg'
+import ArrowRight from '../components/icons/project/arrow-right.svg'
 
 const { imgs, displayMoreInformation, projectIndex } = defineProps({
   imgs: {
@@ -10,66 +10,67 @@ const { imgs, displayMoreInformation, projectIndex } = defineProps({
   },
   displayMoreInformation: {
     type: Boolean,
-    required: true
+    required: true,
   },
   projectIndex: {
     type: Number,
     required: true,
-  }
-});
+  },
+})
 
-const imgLength = ref(imgs.length);
+const imgLength = ref(imgs.length)
 
-const imgsIndex = ref(0);
+const imgsIndex = ref(0)
 
 const decrement = () => {
-  if ((imgsIndex.value - 1) < 0) {
-    imgsIndex.value = imgLength.value;
+  if (imgsIndex.value - 1 < 0) {
+    imgsIndex.value = imgLength.value
     moveToView()
-    return;
+    return
   }
 
-  imgsIndex.value--;
-  moveToView();
+  imgsIndex.value--
+  moveToView()
 }
 
 const increment = () => {
-  if ((imgsIndex.value + 1) >= imgLength.value) {
-    imgsIndex.value = 0;
+  if (imgsIndex.value + 1 >= imgLength.value) {
+    imgsIndex.value = 0
     moveToView()
-    return;
+    return
   }
 
-  imgsIndex.value++;
-  moveToView();
+  imgsIndex.value++
+  moveToView()
 }
 
 const moveToView = () => {
-  const img = document.getElementById(`img-more-information-${imgsIndex.value}-project-index-${projectIndex}`);
+  const img = document.getElementById(
+    `img-more-information-${imgsIndex.value}-project-index-${projectIndex}`,
+  )
 
   if (!img) {
-    return;
+    return
   }
 
   img.scrollIntoView({
     behavior: 'smooth',
     block: 'center',
-    inline: 'center'
+    inline: 'center',
   })
 }
 
 onUpdated(() => {
   if (displayMoreInformation === false) {
-    imgsIndex.value = 0;
-    moveToView();
+    imgsIndex.value = 0
+    moveToView()
   }
-});
-
+})
 </script>
 
 <template>
   <div class="project-element-imgs">
-    <div v-if="displayMoreInformation"  class="project-element-imgs-buttons">
+    <div v-if="displayMoreInformation" class="project-element-imgs-buttons">
       <button class="project-element-imgs-carousel-button" @click="decrement">
         <img :src="ArrowLeft" alt="seta do carrossel apontado para direita" />
       </button>
@@ -78,7 +79,13 @@ onUpdated(() => {
       </button>
     </div>
     <div class="project-element-imgs-content">
-      <img v-for="(img, index) in imgs" :src="img" alt="imagem do projeto" :id="`img-more-information-${index}-project-index-${projectIndex}`" :key="`imgs-${index}`">
+      <img
+        v-for="(img, index) in imgs"
+        :src="img"
+        alt="imagem do projeto"
+        :id="`img-more-information-${index}-project-index-${projectIndex}`"
+        :key="`imgs-${index}`"
+      />
     </div>
   </div>
 </template>
