@@ -1,10 +1,11 @@
 <script lang="ts" setup>
   import photo from "@/assets/img/photo.jpg";
+import getExperienceYear from "./utils/experience-year";
 
 </script>
 
 <template>
-  <section class="about-more-component">
+  <section class="about-more-component" id="about-more-container">
     <div class="about-more-content">
       <div class="about-more-photo-content">
         <img :src="photo" alt="">
@@ -12,7 +13,7 @@
       <div class="about-more-text">
         <h1>Mais sobre mim</h1>
         <p>
-          Meu nome é Raoni e sou desenvolvedor de software desde os 16 anos, com dois anos de experiência profissional. <br /> <br />
+          Meu nome é Raoni e sou desenvolvedor de software desde os 16 anos, com {{ getExperienceYear() }} anos de experiência profissional. <br /> <br />
           Atualmente, sou responsável pelo desenvolvimento e manutenção de um SaaS de administração escolar,
           uma solução que criei e distribuo para escolas,
           centralizando informações acadêmicas e otimizando a gestão pedagógica. Além do desenvolvimento full stack,

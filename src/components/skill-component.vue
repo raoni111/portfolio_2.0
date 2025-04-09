@@ -24,6 +24,9 @@
   import NodeIcon from '@/components/icons/skills/back-end/nodejs.svg';
   import Aws from '@/components/icons/skills/back-end/aws.webp';
   import SocketIo from '@/components/icons/skills/back-end/socket-io.svg';
+  import PHPIcon from '@/components/icons/skills/back-end/PHP.svg';
+  import CSharp from '@/components/icons/skills/back-end/C_Sharp.png';
+  import GCP from '@/components/icons/skills/back-end/GCP.webp';
 
   const frontEndSkills = [
     { src: JavascriptIcon, title: "JavaScript" },
@@ -44,12 +47,15 @@
     { src: NodeIcon, title: "Node.js" },
     { src: TypescriptIcon, title: "TypeScript" },
     { src: PythonIcon, title: "Python"},
+    { src: PHPIcon, title: "PHP" },
+    { src: CSharp, title: "C#" },
     { src: ExpressIcon, title: "Express.js" },
     { src: FlaskIcon, title: "Flask" },
     { src: NestIcon, title: "NestJS" },
     { src: MySQLIcon, title: "MySQL" },
     { src: DockerIcon, title: "Docker" },
     { src: FirebaseIcon, title: "Firebase" },
+    { src: GCP, title: "GCP" },
     { src: Aws, title: "AWS" },
     { src: SocketIo, title: "Socket.io" },
   ];
