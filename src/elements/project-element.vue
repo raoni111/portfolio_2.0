@@ -7,7 +7,7 @@ import CloseIcon from '@/components/icons/project/close-icon.svg'
 import { ref } from 'vue'
 import { useDisplayButtonsStore } from '@/stores/displayButtons'
 
-defineProps({
+const {about} = defineProps({
   cover: {
     type: String,
     required: true,
@@ -124,9 +124,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
               :icon="skill.icon"
             />
           </div>
-          <p>
-            {{ about }}
-          </p>
+          <p class="markdown-content" v-html="about" />
         </div>
       </div>
     </div>
@@ -293,9 +291,9 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
         margin-top: 1rem;
       }
 
-      p {
+      .markdown-content {
         margin-top: 1rem;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         color: var(--font-color-gray);
       }
     }

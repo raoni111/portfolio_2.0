@@ -52,9 +52,11 @@ export default [
     cover: CoverProenca,
     link: 'https://promanute.com.br',
     imgs: [proenca1, proenca2, proenca3, proenca4, proenca5],
-    about: `O site da empresa Proença foi criado para servir como uma vitrine virtual,
-            apresentando os serviços oferecidos, destacando projetos realizados,
-            exibindo parcerias importantes e facilitando o contato com a empresa.`,
+    about: `
+              O site da empresa Proença foi criado para servir como uma vitrine virtual, apresentando os serviços oferecidos, destacando projetos realizados, exibindo parcerias importantes e facilitando o contato direto com a empresa. <br /><br />
+              Todo o projeto foi desenvolvido com foco em usabilidade, design responsivo e comunicação clara, garantindo uma boa experiência para visitantes em qualquer dispositivo. A proposta visual transmite profissionalismo e solidez, alinhando-se à identidade da marca e ao setor industrial em que a empresa atua. <br /><br />
+              Este projeto representa mais do que a construção de um site: é um passo estratégico na presença digital da Proença, pensado para ampliar sua visibilidade e fortalecer relacionamentos comerciais.
+            `,
     skill: [
       {
         title: 'Typescript',
@@ -93,9 +95,13 @@ export default [
       educacao11,
       educacao12,
     ],
-    about: `Sistema desenvolvido para otimizar os processos escolares,
-            reunindo em uma única plataforma as principais ferramentas utilizadas pelos pedagogos,
-            como chamada, boletins, avaliações diagnósticas e lançamento de documentos.`,
+    about: `
+            O Sistema de Gestão Educacional é uma plataforma completa desenvolvida por Raoni Oliveira Quevedo, pensada para facilitar e modernizar a administração de escolas e secretarias de educação. Embora tenha sido criado inicialmente para atender as necessidades da Secretaria Municipal de Educação de Itaoca (SP), o sistema não é exclusivo e pode ser utilizado por outras secretarias ou redes de ensino que buscam melhorar a organização e o acompanhamento pedagógico. <br /><br />
+            Com ele, é possível cadastrar alunos e turmas, lançar frequência, notas, boletins e registrar documentos como planos de aula, relatórios, atas e muito mais. O sistema também oferece ferramentas específicas para professores e coordenadores, como o acompanhamento da hipótese de escrita, diagnóstico de matemática, e análise da aprendizagem ao longo do ano — tudo com visualizações em gráficos fáceis de entender. <br /><br />
+            Além da parte pedagógica, a plataforma também conta com recursos para o setor psicológico, permitindo o registro de atendimentos, anamnese e prontuários dos alunos. Outro destaque é o suporte a indicadores institucionais, como o acompanhamento do Plano Municipal de Educação e programas como o Bolsa Família, com dados organizados para facilitar a tomada de decisões. <br /><br />
+            O sistema funciona em uma estrutura segura e dedicada, com servidor próprio, banco de dados exclusivo e tecnologias de autenticação avançadas. Ele foi desenvolvido com o objetivo de tornar a gestão educacional mais simples, eficiente e centrada nas reais necessidades de quem trabalha na educação pública. <br /><br />
+            Todo o desenvolvimento e manutenção é feito por Raoni Oliveira Quevedo, que também é responsável por adaptar o sistema conforme a realidade de cada instituição interessada.
+            `,
     skill: [
       {
         title: 'Typescript',
