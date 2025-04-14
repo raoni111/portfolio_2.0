@@ -85,7 +85,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
               </h1>
               <img v-if="link" src="../components/icons/project/link-icon.svg" />
             </a>
-            <span>click em qualquer lugar para ter mais infamações</span>
+            <span>click em qualquer lugar para ter mais informações</span>
           </div>
           <div class="project-element-cover-img-content-skill">
             <SmallSkillElement
