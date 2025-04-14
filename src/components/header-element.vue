@@ -27,7 +27,7 @@ import LinkedinIcon from './icons/header/linkedin-icon.vue'
 
 <style lang="scss" scoped>
 .header-element {
-  position: absolute ;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +51,7 @@ import LinkedinIcon from './icons/header/linkedin-icon.vue'
 
       .social-icon {
         &:nth-child(1) {
-            margin-right: 1rem;
+          margin-right: 1rem;
         }
         a {
           cursor: pointer;
@@ -60,7 +60,6 @@ import LinkedinIcon from './icons/header/linkedin-icon.vue'
           align-items: center;
           text-decoration: none;
           color: var(--font-color-green);
-
 
           .social-name {
             margin-left: 1rem;
@@ -80,8 +79,7 @@ import LinkedinIcon from './icons/header/linkedin-icon.vue'
         font-size: 1.8rem;
       }
       .header-social-list {
-
-      .social-icon {
+        .social-icon {
           a {
             .social-name {
               font-size: 1.2rem;

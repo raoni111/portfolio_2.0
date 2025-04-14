@@ -7,7 +7,7 @@ import CloseIcon from '@/components/icons/project/close-icon.svg'
 import { ref } from 'vue'
 import { useDisplayButtonsStore } from '@/stores/displayButtons'
 
-defineProps({
+const {about} = defineProps({
   cover: {
     type: String,
     required: true,
@@ -85,7 +85,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
               </h1>
               <img v-if="link" src="../components/icons/project/link-icon.svg" />
             </a>
-            <span>click em qualquer lugar para ter mais infamações</span>
+            <span>click em qualquer lugar para ter mais informações</span>
           </div>
           <div class="project-element-cover-img-content-skill">
             <SmallSkillElement
@@ -124,9 +124,7 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
               :icon="skill.icon"
             />
           </div>
-          <p>
-            {{ about }}
-          </p>
+          <p class="markdown-content" v-html="about" />
         </div>
       </div>
     </div>
@@ -289,22 +287,22 @@ const toggleDisplayInformation = (preload: MouseEvent) => {
         width: 100%;
         opacity: 1;
         transition: opacity 1s ease-in-out;
-          width: 100%;
-          margin-top: 1rem;
-        }
-
-        p {
-          margin-top: 1rem;
-          font-size: 1.3rem;
-          color: var(--font-color-gray);
-        }
+        width: 100%;
+        margin-top: 1rem;
       }
 
-      img {
-        width: 100%;
+      .markdown-content {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        color: var(--font-color-gray);
       }
     }
+
+    img {
+      width: 100%;
+    }
   }
+}
 
 @media (max-width: 1250px) {
   .project-element {
